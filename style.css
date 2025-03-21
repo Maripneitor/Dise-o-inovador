@@ -322,7 +322,7 @@ p {
         width: 100%;
     }
     #menu:checked ~ .navbar {
-        display: initial;
+        display: block; /* Muestra el menú cuando el checkbox está marcado */
     }
 
     .header {
