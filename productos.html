@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos</title>
+    <link rel="stylesheet" href="stylesP.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Agregar Producto</h1>
+        <form id="productForm">
+            <input type="text" id="productName" placeholder="Nombre del producto" required>
+            <input type="number" id="productPrice" placeholder="Precio" required>
+            <input type="number" id="productStock" placeholder="Stock disponible" required>
+            <textarea id="productDescription" placeholder="Descripción" required></textarea>
+            <input type="file" id="productImage" accept="image/*" required>
+            <img id="imagePreview" src="#" alt="Vista previa de la imagen" style="display:none;">
+            <button type="submit">Agregar Producto</button>
+        </form>
+        <a href="detalleProducto.html">Ver lista de productos</a>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
