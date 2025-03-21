@@ -20,11 +20,15 @@ body {
         rgba(0, 0, 0, 0.7),
         rgba(0, 0, 0, 0.7)),
         url(images/bg.jpg) center bottom no-repeat;
+    background-position: center bottom;
+    background-repeat: no-repeat;
     background-size: cover;
     min-height: 70vh;
     display: flex;
     align-items: center; 
 }
+
+
 
 .menu {
     position: absolute;
@@ -89,6 +93,7 @@ body {
 .header-content p {
     font-size: 20px;
     color: #c5c5c5;
+    padding: 0 250px;
     margin-bottom: 25px;
 }
 
@@ -96,11 +101,11 @@ body {
    display: inline-block;
    padding: 11px 35px;
    background-color: #ce967b;
-    color: #f9fafcfc;
-    text-transform: uppercase;
+   color: #f9fafcfc;
+   text-transform: uppercase;
 }
 
-.btn-1 :hover {
+.btn-1:hover {
     background-color: #ebad8d;
     transition: background-color 0.3s ease;
 }
@@ -138,14 +143,14 @@ body {
     margin-bottom: 50px;
 }
 
-.coffee-1 img {
+.coffee-1img {
     padding: 0 25px;
 }
 .coffee-1 img {
     width: 200px;
 }
 
-.coffee- img {
+.coffee-img {
     position: absolute;
     top: 0;
     right: 0;
@@ -194,7 +199,7 @@ body {
 }
 
 .services-1 {
-    padding: 0 100px;
+    padding: 0 00px;
 
 }
 
@@ -247,7 +252,7 @@ h2 {
 p {
     font-size: 16px;
     color: #414247;
-    margin-bottom: 25px 0 45px 0;
+    margin-bottom: 25px;
 }
 
 .blog {
@@ -333,11 +338,11 @@ p {
     }
 
 
-    .coffe {
+    .coffee {
         padding: 30px ;
     }    
     
-    .coffe-content h2 {
+    .coffee-content h2 {
         padding: 0 ;
     }   
 
@@ -345,12 +350,12 @@ p {
         padding: 0 ;
     }
 
-    .coffe-group {
+    .coffee-group {
         flex-direction: column;
         margin-bottom: 0;
     }
 
-    .coffe-img{
+    .coffee-img{
         display: none;
     }
 
@@ -382,6 +387,7 @@ p {
     }
 
     .general-2, .general-3 {
+        height: 400px;
         display: none;
     }
 
@@ -405,14 +411,6 @@ p {
         flex-direction: column;
         text-align: center;
     }
-
-
-
-
-
-
-
-
 
 
 }
