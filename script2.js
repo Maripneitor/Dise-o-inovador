@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Stock: ${product.stock}</p>
             <p>${product.description}</p>
             <button onclick="addToCart(${index})">Añadir al carrito</button>
-            <button onclick="deleteProduct(${index})">Eliminar producto</button>
+            <button onclick="window.deleteProduct(${index})">Eliminar producto</button>
         `;
 
         productList.appendChild(productItem);
