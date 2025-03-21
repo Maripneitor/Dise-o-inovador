@@ -28,7 +28,24 @@ body {
     align-items: center; 
 }
 
+/* Estilos para el logo */
+.logo {
+    position: relative;
+    margin-left: -300px;
+    margin-right: 300px;
+    margin-top: auto;
+}
 
+.logo-img {
+    height: 300px; /* Aumenta el tamaño de la imagen */
+    width: left; /* Mantiene la proporción de la imagen */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
 .menu {
     position: absolute;
@@ -52,7 +69,7 @@ body {
 }
 
 .menu .navbar ul li a {
-   font-size: 18px;
+   font-size: 24px;
    padding: 20px;
     color: #fffdfc;
     display: block;
@@ -317,6 +334,7 @@ p {
         right: 0;
         background-color: #323337;
         display: none;
+        z-index: 1000;
     }
     .menu .navbar ul li {
         width: 100%;
