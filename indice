@@ -1,0 +1,42 @@
+
+1. Página Principal 
+
+index.html = Página principal con menú de navegación, banners y secciones de contenido. Contiene enlaces a todas las demás páginas.
+    style.css = Estilos principales para la página de inicio (header, botones, responsive).
+    images = Carpeta que contiene imágenes utilizadas en la página principal.
+    script.js = Script para manejar el menú de navegación y la funcionalidad de los banners.
+
+
+2. Login/Registro
+    index2.html = Página de inicio de sesión y registro. Contiene formularios para iniciar sesión y registrarse.
+    style2.css = Estilos para la página de inicio de sesión y registro (formulario, botones, responsive).
+    script.js = Script para manejar el inicio de sesión y el registro (validación de formularios, mensajes de error).
+
+3. Productos
+    detalleProducto.html = Página que muestra la lista de productos. Contiene un botón para agregar nuevos productos.
+    productos.html = Página para agregar productos. Contiene un formulario para ingresar los detalles del producto.
+    stylesP.css = Estilos para la página de productos (formulario, botones, responsive).
+    script2.js = Script para manejar el CRUD de productos (agregar, editar, eliminar productos).
+
+4. archivos
+detalleProducto.html
+index.html
+index2.html
+productos.html
+script.js
+script2.js
+style.css
+style2.css
+stylesP.css
+
+
+proyecto/
+├── index.html
+├── index2.html          # Login/Registro (usa script.js)
+├── productos.html       # Formulario de productos
+├── detalleProducto.html # Lista de productos
+├── script.js            # Este archivo (toggle formularios)
+├── script2.js           # CRUD de productos
+├── style.css            # Estilos página principal
+├── style2.css           # Estilos login/registro
+└── stylesP.css          # Estilos productos

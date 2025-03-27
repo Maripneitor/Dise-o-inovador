@@ -22,19 +22,14 @@
         <h1>Agregar Producto</h1>
         <form id="productForm">
             <input type="text" id="productName" placeholder="Nombre del producto" required>
-            <input type="number" id="productPrice" placeholder="Precio" required>
-            <input type="number" id="productStock" placeholder="Stock disponible" required>
+            <input type="number" id="productPrice" placeholder="Precio" min="0" step="0.01" required>
+            <input type="number" id="productStock" placeholder="Stock disponible" min="0" required>
             <textarea id="productDescription" placeholder="Descripción" required></textarea>
             <input type="file" id="productImage" accept="image/*" required>
-            <img id="imagePreview" src="#" alt="Vista previa de la imagen" style="display:none;">
+            <img id="imagePreview" src="#" alt="Vista previa de la imagen" style="display:none; max-width:200px;">
             <button type="submit">Agregar Producto</button>
         </form>
-        <a href="detalleProducto.html">Ver lista de productos</a>
-        <b></b>
-        <br>
-        
-
-        
+        <a href="detalleProducto.html" class="btn">Ver lista de productos</a>
     </div>
 
     <script src="script2.js"></script>
