@@ -3,42 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Productos</title>
+    <title>MarketPlus | Lista de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="stylesP.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="index2.html">Registro</a></li>
-            <li><a href="detalleProducto.html">Productos</a></li>
-            <li><a href="productos.html">Registrar Producto</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1>Lista de Productos</h1>
-        
-        <div id="message" class="message"></div>
-
-        <div class="filters">
-            <input type="text" id="searchInput" placeholder="Buscar productos...">
-            <select id="sortProducts">
-                <option value="name">Nombre (A-Z)</option>
-                <option value="name-desc">Nombre (Z-A)</option>
-                <option value="price">Precio (Menor a Mayor)</option>
-                <option value="price-desc">Precio (Mayor a Menor)</option>
-                <option value="stock">Stock (Menor a Mayor)</option>
-                <option value="stock-desc">Stock (Mayor a Menor)</option>
-            </select>
+    <!-- Header consistente con el diseño anterior -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <i class="fas fa-store-alt logo-icon"></i>
+                <h1 class="logo-text">B`ALAM<span>   Cafe </span></h1>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-btn">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </label>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="index2.html"><i class="fas fa-user-plus"></i> Registro</a></li>
+                    <li><a href="detalleProducto.html" class="active"><i class="fas fa-box-open"></i> Productos</a></li>
+                    <li><a href="productos.html"><i class="fas fa-plus-circle"></i> Registrar</a></li>
+                </ul>
+            </nav>
         </div>
+    </header>
 
-        <div id="productList" class="product-list"></div>
-
-        <a href="productos.html" class="btn">Agregar nuevo producto</a>
-    </div>
+    <!-- Contenido principal -->
+    <main class="content-wrapper">
+        <div class="product-card">
+            <div class="card-header">
+                <h2><i class="fas fa-boxes"></i> Inventario de Productos</h2>
+                <div class="header-accent"></div>
+            </div>
+            
+            <!-- Filtros y búsqueda -->
+            <div class="product-controls">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar productos..." class="search-input">
+                </div>
+                
+                <div class="sort-container">
+                    <label for="sortProducts"><i class="fas fa-sort"></i> Ordenar por:</label>
+                    <select id="sortProducts" class="sort-select">
+                        <option value="name">Nombre (A-Z)</option>
+                        <option value="name-desc">Nombre (Z-A)</option>
+                        <option value="price">Precio (Menor a Mayor)</option>
+                        <option value="price-desc">Precio (Mayor a Menor)</option>
+                        <option value="stock">Stock (Menor a Mayor)</option>
+                        <option value="stock-desc">Stock (Mayor a Menor)</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Lista de productos -->
+            <div id="productList" class="product-grid"></div>
+            
+            <!-- Mensaje cuando no hay productos -->
+            <div id="emptyState" class="empty-state">
+                <i class="fas fa-box-open empty-icon"></i>
+                <h3>No hay productos registrados</h3>
+                <p>Comienza agregando tu primer producto</p>
+                <a href="productos.html" class="btn-primary">
+                    <i class="fas fa-plus"></i> Agregar Producto
+                </a>
+            </div>
+        </div>
+        
+        <div id="message" class="notification"></div>
+    </main>
 
     <script src="script2.js"></script>
 </body>

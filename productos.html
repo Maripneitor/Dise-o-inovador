@@ -3,34 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Productos</title>
+    <title>B`ALAM | Gestión de Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="stylesP.css">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="index2.html">Registro</a></li>
-            <li><a href="detalleProducto.html">Productos</a></li>
-            <li><a href="productos.html">Registrar Producto</a></li>
-        </ul>
-    </nav>
+    <!-- Header con gradiente -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <i class="fas fa-store-alt logo-icon"></i>
+                <h1 class="logo-text">B`ALAM<span>   Cafe</span></h1>
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-btn">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </label>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="index2.html"><i class="fas fa-user-plus"></i> Registro</a></li>
+                    <li><a href="detalleProducto.html"><i class="fas fa-box-open"></i> Productos</a></li>
+                    <li><a href="productos.html" class="active"><i class="fas fa-plus-circle"></i> Registrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <div class="container">
-        <h1>Agregar Producto</h1>
-        <form id="productForm">
-            <input type="text" id="productName" placeholder="Nombre del producto" required>
-            <input type="number" id="productPrice" placeholder="Precio" min="0" step="0.01" required>
-            <input type="number" id="productStock" placeholder="Stock disponible" min="0" required>
-            <textarea id="productDescription" placeholder="Descripción" required></textarea>
-            <input type="file" id="productImage" accept="image/*" required>
-            <img id="imagePreview" src="#" alt="Vista previa de la imagen" style="display:none; max-width:200px;">
-            <button type="submit">Agregar Producto</button>
-        </form>
-        <a href="detalleProducto.html" class="btn">Ver lista de productos</a>
-    </div>
+    <!-- Contenido principal con cards -->
+    <main class="content-wrapper">
+        <div class="product-card form-card">
+            <div class="card-header">
+                <h2><i class="fas fa-cube"></i> Nuevo Producto</h2>
+                <div class="header-accent"></div>
+            </div>
+            
+            <form id="productForm" class="product-form">
+                <div class="form-group">
+                    <label for="productName"><i class="fas fa-tag"></i> Nombre del producto</label>
+                    <input type="text" id="productName" placeholder="Ej: Laptop HP Pavilion" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productPrice"><i class="fas fa-dollar-sign"></i> Precio</label>
+                        <input type="number" id="productPrice" placeholder="0.00" min="0" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productStock"><i class="fas fa-boxes"></i> Stock</label>
+                        <input type="number" id="productStock" placeholder="Cantidad disponible" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productDescription"><i class="fas fa-align-left"></i> Descripción</label>
+                    <textarea id="productDescription" placeholder="Características del producto..." rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productImage" class="file-upload-btn">
+                        <i class="fas fa-camera"></i> Imagen del producto
+                        <span id="fileName">Ningún archivo seleccionado</span>
+                    </label>
+                    <input type="file" id="productImage" accept="image/*" required>
+                    <div class="image-preview-container">
+                        <img id="imagePreview" src="#" alt="Vista previa de la imagen">
+                        <div class="placeholder-preview">
+                            <i class="fas fa-image"></i>
+                            <p>Vista previa aparecerá aquí</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-save"></i> Guardar Producto
+                </button>
+            </form>
+        </div>
+        
+        <a href="detalleProducto.html" class="view-products-btn">
+            <i class="fas fa-list-ul"></i> Ver todos los productos
+        </a>
+        
+        <div id="message" class="notification"></div>
+    </main>
 
     <script src="script2.js"></script>
 </body>
