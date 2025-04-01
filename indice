@@ -1,10 +1,9 @@
 
 1. Página Principal 
-
-index.html = Página principal con menú de navegación, banners y secciones de contenido. Contiene enlaces a todas las demás páginas.
+    index.html = Página principal con menú de navegación, banners y secciones de contenido. Contiene enlaces a todas las demás páginas.
     style.css = Estilos principales para la página de inicio (header, botones, responsive).
     images = Carpeta que contiene imágenes utilizadas en la página principal.
-    script.js = Script para manejar el menú de navegación y la funcionalidad de los banners.
+    //script.js = Script para manejar el menú de navegación y la funcionalidad de los banners.
 
 
 2. Login/Registro

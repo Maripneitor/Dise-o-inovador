@@ -1,0 +1,227 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #99582a;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Estilos del menú hamburguesa */
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-left: 2rem;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ce967b;
+    transition: color 0.3s ease;
+}
+
+/* Contenedor principal */
+.user-detail-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Encabezado del usuario */
+.user-header {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.user-avatar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #99582a;
+    margin-right: 2rem;
+}
+
+.user-info h2 {
+    font-size: 2rem;
+    color: #99582a;
+    margin-bottom: 0.5rem;
+}
+
+.user-description {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Sección de detalles */
+.user-details {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.user-details h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #99582a;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #99582a;
+    margin-bottom: 0.3rem;
+}
+
+.detail-value {
+    color: #333;
+    padding-left: 1rem;
+}
+
+/* Estadísticas del usuario */
+.user-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #99582a;
+    margin-bottom: 1rem;
+}
+
+.stat-card h4 {
+    color: #99582a;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #99582a;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #99582a;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .menu-icono {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        background-color: #99582a;
+        transition: left 0.3s;
+    }
+
+    #menu:checked ~ .navbar {
+        left: 0;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .navbar ul li {
+        margin: 1rem 0;
+    }
+
+    .user-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .user-avatar img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+}
