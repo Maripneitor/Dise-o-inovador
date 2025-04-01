@@ -46,7 +46,7 @@ function renderProducts(products) {
     }
 
     productList.innerHTML = products.map((product, index) => `
-        <div class="product-item">
+        <div class="product-item" data-id="${product.id || index}">
             ${product.image ? `<img src="${product.image}" alt="${product.name}" class="product-img">` : ''}
             <div class="product-info">
                 <h3>${product.name}</h3>
@@ -54,24 +54,91 @@ function renderProducts(products) {
                 <p><strong>Stock:</strong> ${product.stock}</p>
                 <p class="description">${product.description}</p>
                 <div class="product-actions">
-                    <button onclick="addToCart(${index})" class="btn-cart">Añadir al carrito</button>
-                    <button onclick="deleteProduct(${index})" class="btn-delete">Eliminar</button>
+                    <button onclick="addToCart(${index})" class="btn-cart">
+                        <i class="fas fa-cart-plus"></i> Añadir al carrito
+                    </button>
+                    <button onclick="deleteProduct(${index})" class="btn-delete">
+                        <i class="fas fa-trash"></i> Eliminar
+                    </button>
                 </div>
             </div>
         </div>
     `).join('');
 }
 
+// Funciones del carrito
+function getCartFromStorage() {
+    try {
+        return JSON.parse(localStorage.getItem('cart')) || [];
+    } catch (error) {
+        console.error('Error al leer carrito:', error);
+        return [];
+    }
+}
+
+function saveCartToStorage(cart) {
+    try {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        return true;
+    } catch (error) {
+        console.error('Error al guardar carrito:', error);
+        return false;
+    }
+}
+
+function updateCartCount() {
+    const cart = getCartFromStorage();
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCountElements = document.querySelectorAll('#cart-count, .cart-count');
+    
+    cartCountElements.forEach(element => {
+        element.textContent = count;
+    });
+}
+
 // Funciones globales
 window.addToCart = function(index) {
     const products = getProductsFromStorage();
     const product = products[index];
+    const cart = getCartFromStorage();
+    
+    // Verificar si el producto ya está en el carrito
+    const existingItem = cart.find(item => item.productId === (product.id || index));
+    
+    if (existingItem) {
+        // Verificar stock disponible
+        if (existingItem.quantity >= product.stock) {
+            showMessage(`No hay suficiente stock de "${product.name}"`, true);
+            return;
+        }
+        existingItem.quantity++;
+    } else {
+        cart.push({
+            productId: product.id || index,
+            name: product.name,
+            price: parseFloat(product.price),
+            image: product.image,
+            quantity: 1,
+            maxStock: product.stock
+        });
+    }
+    
+    saveCartToStorage(cart);
     showMessage(`"${product.name}" añadido al carrito`);
 };
 
 window.deleteProduct = function(index) {
     if (confirm('¿Estás seguro de eliminar este producto?')) {
         const products = getProductsFromStorage();
+        const product = products[index];
+        
+        // Eliminar también del carrito si existe
+        const cart = getCartFromStorage();
+        const updatedCart = cart.filter(item => item.productId !== (product.id || index));
+        saveCartToStorage(updatedCart);
+        
+        // Eliminar producto
         products.splice(index, 1);
         localStorage.setItem('products', JSON.stringify(products));
         renderProducts(products);
@@ -106,6 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const product = {
+                id: Date.now(), // ID único
                 name: document.getElementById('productName').value,
                 price: document.getElementById('productPrice').value,
                 stock: document.getElementById('productStock').value,
@@ -117,6 +185,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 showMessage('Producto agregado correctamente');
                 productForm.reset();
                 if (imagePreview) imagePreview.style.display = 'none';
+                
+                // Si estamos en la página de productos, actualizar la lista
+                if (document.getElementById('productList')) {
+                    renderProducts(getProductsFromStorage());
+                }
             } else {
                 showMessage('Error al guardar el producto', true);
             }
@@ -165,4 +238,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderProducts(sorted);
         });
     }
+
+    // Actualizar contador del carrito al cargar la página
+    updateCartCount();
 });

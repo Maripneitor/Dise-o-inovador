@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketPlus | Carrito de Compras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="stylesP.css">
+    <link rel="stylesheet" href="stylesCart.css">
+</head>
+<body>
+    <!-- Header consistente con el diseño -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <!-- Logo aquí -->
+            </div>
+            
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="menu-btn">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </label>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index2.html">Registro</a></li>
+                    <li><a href="detalleProducto.html">Productos</a></li>
+                    <li><a href="productos.html">Registrar producto</a></li>
+                    <li><a href="carrito.html" class="active-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
+                    <li><a href="detalleusuario.html"><i class="fas fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="cart-wrapper">
+        <div class="cart-card">
+            <div class="card-header">
+                <h2><i class="fas fa-shopping-cart"></i> Tu Carrito de Compras</h2>
+                <div class="header-accent"></div>
+            </div>
+            
+            <!-- Contenido del carrito -->
+            <div id="cartContent">
+                <div class="cart-items-container" id="cartItems">
+                    <!-- Los productos del carrito aparecerán aquí -->
+                </div>
+                
+                <!-- Resumen del pedido -->
+                <div class="order-summary">
+                    <h3><i class="fas fa-receipt"></i> Resumen del Pedido</h3>
+                    <div class="summary-details">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Envío:</span>
+                            <span id="shipping">$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="total">$0.00</span>
+                        </div>
+                    </div>
+                    <button id="checkoutBtn" class="btn-checkout">
+                        <i class="fas fa-credit-card"></i> Proceder al Pago
+                    </button>
+                    <a href="detalleProducto.html" class="btn-continue">
+                        <i class="fas fa-arrow-left"></i> Seguir Comprando
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Estado vacío -->
+            <div id="emptyCart" class="empty-state">
+                <i class="fas fa-shopping-basket empty-icon"></i>
+                <h3>Tu carrito está vacío</h3>
+                <p>Agrega productos desde nuestra tienda</p>
+                <a href="detalleProducto.html" class="btn-primary">
+                    <i class="fas fa-store"></i> Ir a Productos
+                </a>
+            </div>
+        </div>
+        
+        <div id="message" class="notification"></div>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+</html>
