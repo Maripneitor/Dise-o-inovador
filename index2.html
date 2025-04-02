@@ -1,98 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Registro &amp; login</title>
-  <link rel="stylesheet" href="./style2.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro Completo</title>
+  <link rel="stylesheet" href="style2.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="index2.html">Registro</a></li>
-            <li><a href="detalleProducto.html">Productos</a></li>
-            <li><a href="productos.html">Registrar producto</a></li>
-            <li><a href="carrito.html" class="active-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
-            <li><a href="detalleusuario.html"><i class="fas fa-user"></i></a></li>
-        </ul>
-    </nav>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Login-Signup Form</title>
-    <link rel="stylesheet" href="style2.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <div class="wrapper">
-        <span class="bg-animate"></span>
-        <span class="bg-animate2"></span>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html"><i class='bx bx-home'></i><span class="nav-text">Inicio</span></a></li>
+      <li><a href="index2.html" class="active"><i class='bx bx-user-plus'></i><span class="nav-text">Registro</span></a></li>
+      <li><a href="detalleProducto.html"><i class='bx bx-shopping-bag'></i><span class="nav-text">Productos</span></a></li>
+      <li><a href="productos.html"><i class='bx bx-plus-circle'></i><span class="nav-text">Registrar</span></a></li>
+      <li><a href="carrito.html" class="active-cart"><i class='bx bx-cart'></i> <span id="cart-count">0</span></a></li>
+      <li><a href="detalleusuario.html"><i class='bx bx-user-circle'></i></a></li>
+    </ul>
+  </nav>
 
-        <div class="form-box login">
-            <h2 class="animation" style="--i:0; --j:21;">Iniciar sesion</h2>
-            <form action="#">
-                <div class="input-box animation" style="--i:1; --j:22;">
-                    <input type="text" required>
-                    <label>Usuario</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box animation" style="--i:2; --j:23;">
-                    <input type="password" required>
-                    <label>Contraseña</label>
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-                <button class="btn animation" type="submit" style="--i:3; --j:24;">Inicio</button>
-                <div class="logreg-link animation" style="--i:4; --j:25;">
-                    <p>¿No tienes una cuenta? <br> <a href="#" class="register-link">Registrarse</a></p>
-                    
-                </div>
-            </form>
-        </div>
-        <div class="info-text login">
-            <h2 class="animation" style="--i:0; --j:20;">¡Bienvenido de nuevo!</h2>
-            <p class="animation" style="--i:1; --j:21;">¡Nos alegra tenerte de vuelta con nosotros! Si necesitas algo, estamos aquí para ayudarte.</p>
-        </div>
+  <div class="wrapper">
+    <span class="bg-animate"></span>
+    <span class="bg-animate2"></span>
 
-        <div class="form-box register ">
-            <h2 class="animation" style="--i:17; --j:0;">Registrarse</h2>
-            <form action="#">
-                <div class="input-box animation" style="--i:18; --j:1;">
-                    <input type="text" required>
-                    <label>Usuario</label>
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="input-box animation" style="--i:19; --j:2;">
-                    <input type="text" required>
-                    <label>Email</label>
-                    <i class='bx bxs-envelope' ></i>
-                </div>
-                <div class="input-box animation" style="--i:20; --j:3;">
-                    <input type="password" required>
-                    <label>Password</label>
-                    <i class='bx bxs-lock-alt' ></i>
-                </div>
-                <button class="btn animation" type="submit" style="--i:21; --j:4;">Registrarse</button>
-                <div class="logreg-link animation" style="--i:22; --j:5;">
-                    <p> Ya tienes una cuenta? <br> <a href="#" class="login-link">iniciar sesion</a></p>
-                    
-                </div>
-            </form>
+    <div class="form-box login">
+      <h2 class="animation" style="--i:0; --j:21;">Iniciar sesión</h2>
+      <form action="#">
+        <div class="input-box animation" style="--i:1; --j:22;">
+          <input type="text" required>
+          <label>Usuario o Email</label>
+          <i class='bx bxs-user'></i>
         </div>
-
-        <div class="info-text register">
-            <h2 class="animation" style="--i:17; --j:0;">¡Bienvenido!</h2>
-            <p class="animation" style="--i:18; --j:1">Nos complace tenerte aquí. Si necesitas ayuda, no dudes en contactarnos.</p>
+        <div class="input-box animation" style="--i:2; --j:23;">
+          <input type="password" required>
+          <label>Contraseña</label>
+          <i class='bx bxs-lock-alt'></i>
+          <div class="password-strength">
+            <div class="strength-meter"></div>
+          </div>
         </div>
+        <button class="btn animation" type="submit" style="--i:3; --j:24;">Iniciar sesión</button>
+        <div class="logreg-link animation" style="--i:4; --j:25;">
+          <p>¿No tienes una cuenta? <a href="#" class="register-link">Regístrate</a></p>
+        </div>
+      </form>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
+    <div class="form-box register">
+      <h2 class="animation" style="--i:17; --j:0;">Registro Completo</h2>
+      <form action="#">
+        <div class="input-row">
+          <div class="input-box animation" style="--i:18; --j:1;">
+            <input type="text" required>
+            <label>Nombre</label>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box animation" style="--i:19; --j:2;">
+            <input type="text" required>
+            <label>Apellido Paterno</label>
+            <i class='bx bxs-user'></i>
+          </div>
+        </div>
+        
+        <div class="input-row">
+          <div class="input-box animation" style="--i:20; --j:3;">
+            <input type="text" required>
+            <label>Apellido Materno</label>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box animation" style="--i:21; --j:4;">
+            <input type="email" required>
+            <label>Correo Electrónico</label>
+            <i class='bx bxs-envelope'></i>
+          </div>
+        </div>
 
+        <div class="input-row">
+          <div class="input-box animation" style="--i:22; --j:5;">
+            <input type="password" required>
+            <label>Contraseña</label>
+            <i class='bx bxs-lock-alt'></i>
+            <div class="password-strength">
+              <div class="strength-meter"></div>
+            </div>
+          </div>
+          <div class="input-box animation" style="--i:23; --j:6;">
+            <input type="tel" required>
+            <label>Teléfono</label>
+            <i class='bx bxs-phone'></i>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-box animation" style="--i:24; --j:7;">
+            <input type="text" required>
+            <label>Ciudad</label>
+            <i class='bx bxs-city'></i>
+          </div>
+          <div class="input-box animation" style="--i:25; --j:8;">
+            <input type="text" required>
+            <label>Código Postal</label>
+            <i class='bx bxs-map-pin'></i>
+          </div>
+        </div>
+
+        <div class="input-row">
+          <div class="input-box animation" style="--i:26; --j:9;">
+            <input type="text" required>
+            <label>Estado</label>
+            <i class='bx bxs-map'></i>
+          </div>
+          <div class="input-box animation" style="--i:27; --j:10;">
+            <input type="text" required>
+            <label>País</label>
+            <i class='bx bxs-flag'></i>
+          </div>
+        </div>
+
+        <button class="btn animation" type="submit" style="--i:28; --j:11;">Registrarse</button>
+        <div class="logreg-link animation" style="--i:29; --j:12;">
+          <p>¿Ya tienes una cuenta? <a href="#" class="login-link">Iniciar sesión</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="info-text login">
+      <h2 class="animation" style="--i:0; --j:20;">¡Bienvenido de vuelta!</h2>
+      <p class="animation" style="--i:1; --j:21;">Accede a tu cuenta para descubrir ofertas exclusivas.</p>
+    </div>
+
+    <div class="info-text register">
+      <h2 class="animation" style="--i:17; --j:0;">¡Únete a nosotros!</h2>
+      <p class="animation" style="--i:18; --j:1">Completa tu registro para disfrutar de todos nuestros servicios.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

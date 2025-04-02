@@ -1,162 +1,147 @@
-/* Variables de color y estilos base */
 :root {
-    --primary: #2e1c15;
-    --secondary: #2e1c15;
-    --accent: #2e1c15;
-    --light: #f8f9fa;
-    --dark: #212529;
-    --text: #495057;
-    --card-bg: #ffffff;
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    --radius: 12px;
-    --transition: all 0.3s ease;
-}
-
-/* Reset y estilos base */
-* {
+    --primary: #5D4037;
+    --secondary: #8D6E63;
+    --accent: #D7CCC8;
+    --light: #EFEBE9;
+    --dark: #ffffff;
+    --dark2: #2e1b15;
+    --gold: #FAFAFA; 
+    --text: #212121;
+    --text2: #033582;
+    --text-light: #fafafa;
+    --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-    background-color: #f5f7ff;
-    color: var(--text);
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f9faff;
+    background-color: var(--light);
+    line-height: 1.7;
     min-height: 100vh;
-}
-
-/* Navbar elegante */
-nav.navbar {
+  }
+  
+  .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(46,28,21,255);
-    backdrop-filter: blur(10px);
-    color: white;
-    padding: 15px 5%;
+    background: rgba(46,27,21,255);
+    backdrop-filter: blur(12px);
+    color: var(--dark);
+    padding: 18px 5%;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     z-index: 1000;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-nav.navbar ul {
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar ul {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px;
-}
-
-nav.navbar ul li a {
-    color: white;
+    gap: 25px;
+  }
+  
+  .navbar ul li a {
+    color: var(--dark);
     text-decoration: none;
-    padding: 8px 15px;
+    padding: 8px 16px;
     border-radius: 30px;
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
     transition: var(--transition);
-    position: relative;
-}
-
-nav.navbar ul li a i {
+  }
+  
+  .navbar ul li a i {
     font-size: 1.1rem;
-}
-
-nav.navbar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-nav.navbar ul li a.active-cart {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-nav.navbar ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: white;
-    transition: var(--transition);
-}
-
-nav.navbar ul li a:hover::after {
-    width: 60%;
-}
-
-/* Contenedor principal del formulario */
-.wrapper {
+  }
+  
+  .navbar ul li a:hover {
+    color: var(--primary);
+    transform: translateY(-2px);
+  }
+  
+  .navbar ul li a.active {
+    background-color: var(--primary);
+    color: rgb(255, 255, 255);
+  }
+  
+  .navbar ul li a.active-cart {
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  .navbar ul li a.active-cart:hover {
+    background-color: var(--accent);
+  }
+  
+  .wrapper {
     position: relative;
-    width: 800px;
-    height: 500px;
+    width: 950px;
+    height: 700px;
     background: white;
     border-radius: var(--radius);
     overflow: hidden;
     box-shadow: var(--shadow);
     margin: 100px auto 2rem;
-}
-
-/* Efectos de fondo */
-.wrapper .bg-animate {
+  }
+  
+  .bg-animate {
     position: absolute;
-    top: -50%;
-    right: -50%;
+    top: -40%;
+    right: -40%;
     width: 800px;
     height: 800px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     transform: rotate(15deg);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    opacity: 0.8;
-    transition: 1.5s ease;
+    opacity: 0.9;
+    transition: 1.8s ease;
     transition-delay: 1.6s;
-}
-
-.wrapper.active .bg-animate {
-    transform: rotate(0);
+  }
+  
+  .wrapper.active .bg-animate {
+    transform: rotate(0) scale(1.5);
     border-radius: 0;
     width: 100%;
     height: 100%;
     top: 0;
     right: 0;
-    transition-delay: .5s;
-}
-
-.wrapper .bg-animate2 {
+    transition-delay: 0.5s;
+  }
+  
+  .bg-animate2 {
     position: absolute;
-    bottom: -50%;
-    left: -50%;
+    bottom: -40%;
+    left: -40%;
     width: 800px;
     height: 800px;
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
     transform: rotate(-15deg);
     border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-    opacity: 0.8;
-    transition: 1.5s ease;
-    transition-delay: .5s;
-}
-
-.wrapper.active .bg-animate2 {
-    transform: rotate(0);
+    opacity: 0.9;
+    transition: 1.8s ease;
+    transition-delay: 0.5s;
+  }
+  
+  .wrapper.active .bg-animate2 {
+    transform: rotate(0) scale(1.5);
     border-radius: 0;
     width: 100%;
     height: 100%;
     bottom: 0;
     left: 0;
     transition-delay: 1.2s;
-}
-
-/* Estilos para las cajas de formulario */
-.wrapper .form-box {
+  }
+  
+  .form-box {
     position: absolute;
     top: 0;
     width: 50%;
@@ -164,170 +149,176 @@ nav.navbar ul li a:hover::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
     padding: 40px;
     transition: var(--transition);
-}
-
-.wrapper .form-box.login {
+    z-index: 2;
+  }
+  
+  .form-box.login {
     left: 0;
-}
-
-.wrapper .form-box.register {
+  }
+  
+  .form-box.register {
     right: 0;
     pointer-events: none;
-}
-
-.wrapper.active .form-box.register {
+    opacity: 0;
+    transform: translateX(20px);
+    overflow-y: auto;
+  }
+  
+  .wrapper.active .form-box.register {
     pointer-events: auto;
-}
-
-/* Animaciones */
-.wrapper .form-box.login .animation,
-.wrapper .info-text.login .animation {
-    transform: translateX(0);
     opacity: 1;
-    filter: blur(0);
-    transition: .7s ease;
-    transition-delay: calc(.1s * var(--j));
-}
-
-.wrapper.active .form-box.login .animation,
-.wrapper.active .info-text.login .animation {
-    transform: translateX(-120%);
-    opacity: 0;
-    filter: blur(10px);
-    transition-delay: calc(.1s * var(--i));
-}
-
-.wrapper .form-box.register .animation,
-.wrapper .info-text.register .animation {
-    transform: translateX(120%);
-    opacity: 0;
-    filter: blur(10px);
-    transition: .7s ease;
-}
-
-.wrapper.active .form-box.register .animation,
-.wrapper.active .info-text.register .animation {
     transform: translateX(0);
-    opacity: 1;
-    filter: blur(0);
-    transition-delay: calc(.1s * var(--i));
-}
-
-/* Estilos para los elementos del formulario */
-.form-box h2 {
-    font-size: 32px;
-    color: var(--primary);
+  }
+  
+  .wrapper.active .form-box.login {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-20px);
+  }
+  
+  .form-box h2 {
+    font-size: 2rem;
+    color: var(--dark);
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.form-box .input-box {
+    margin-bottom: 25px;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .input-box {
     position: relative;
     width: 100%;
-    height: 50px;
-    margin: 25px 0;
-}
-
-.input-box input {
+    height: 60px;
+  }
+  
+  .input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
     border: none;
     outline: none;
-    border-bottom: 2px solid var(--primary);
-    padding-right: 23px;
-    font-size: 16px;
-    color: var(--dark);
+    border-bottom: 2px solid rgba(108, 12, 12, 0.1);
+    padding-right: 35px;
+    font-size: 0.95rem;
+    color: var(--dark2);
     font-weight: 500;
     transition: var(--transition);
-}
-
-.input-box input:focus,
-.input-box input:valid {
-    border-bottom-color: var(--secondary);
-}
-
-.input-box label {
+  }
+  
+  .input-box input:focus,
+  .input-box input:valid {
+    border-bottom-color: var(--primary);
+  }
+  
+  .input-box label {
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    font-size: 16px;
-    color: var(--primary);
+    font-size: 0.95rem;
+    color: var(--text);
     pointer-events: none;
     transition: var(--transition);
-}
-
-.input-box input:focus~label,
-.input-box input:valid~label {
+  }
+  
+  .input-box input:focus ~ label,
+  .input-box input:valid ~ label {
     top: -5px;
-    color: var(--secondary);
-}
-
-.input-box i {
+    color: var(--primary);
+    font-size: 0.8rem;
+  }
+  
+  .input-box i {
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    font-size: 18px;
-    color: var(--primary);
+    font-size: 1.1rem;
+    color: var(--text);
     transition: var(--transition);
-}
-
-.input-box input:focus~i,
-.input-box input:valid~i {
-    color: var(--secondary);
-}
-
-/* Estilos para botones */
-.btn {
+  }
+  
+  .input-box input:focus ~ i,
+  .input-box input:valid ~ i {
+    color: var(--primary);
+  }
+  
+  .btn {
     position: relative;
     width: 100%;
-    height: 45px;
-    background: var(--primary);
+    height: 50px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
     border: none;
     outline: none;
-    border-radius: 40px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
     font-weight: 600;
     z-index: 1;
     overflow: hidden;
     transition: var(--transition);
-    margin-top: 20px;
-}
-
-.btn:hover {
-    background: var(--secondary);
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+  }
+  
+  .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(153, 88, 42, 0.3);
-}
-
-/* Enlaces de cambiar formulario */
-.form-box .logreg-link {
-    font-size: 14.5px;
+    box-shadow: 0 8px 25px rgba(74, 107, 255, 0.4);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+  }
+  
+  .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, var(--secondary), var(--primary));
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .btn:hover::before {
+    left: 0;
+  }
+  
+  .logreg-link {
+    font-size: 0.9rem;
     color: var(--text);
     text-align: center;
-    margin: 20px 0 10px;
-}
-
-.logreg-link p a {
+    margin: 10px 0;
+  }
+  
+  .logreg-link p a {
     color: var(--primary);
     text-decoration: none;
     font-weight: 600;
-}
-
-.logreg-link p a:hover {
+    transition: var(--transition);
+  }
+  
+  .logreg-link p a:hover {
+    color: var(--secondary);
     text-decoration: underline;
-}
-
-/* Texto informativo */
-.wrapper .info-text {
+  }
+  
+  .info-text {
     position: absolute;
     top: 0;
     width: 50%;
@@ -336,99 +327,145 @@ nav.navbar ul li a:hover::after {
     flex-direction: column;
     justify-content: center;
     color: white;
-    padding: 40px;
-}
-
-.wrapper .info-text.login {
+    padding: 50px;
+    z-index: 1;
+  }
+  
+  .info-text.login {
     right: 0;
     text-align: right;
-}
-
-.wrapper .info-text.register {
+  }
+  
+  .info-text.register {
     left: 0;
     text-align: left;
     pointer-events: none;
-}
-
-.wrapper.active .info-text.register {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  
+  .wrapper.active .info-text.register {
     pointer-events: auto;
-}
-
-.info-text h2 {
-    font-size: 36px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .wrapper.active .info-text.login {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(20px);
+  }
+  
+  .info-text h2 {
+    font-size: 2rem;
     line-height: 1.3;
     margin-bottom: 20px;
-}
-
-.info-text p {
-    font-size: 16px;
-}
-
-/* Responsive Design */
-@media (max-width: 850px) {
+    font-weight: 700;
+  }
+  
+  .info-text p {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+  
+  .password-strength {
+    width: 100%;
+    height: 4px;
+    background: #eee;
+    margin-top: 5px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  
+  .strength-meter {
+    height: 100%;
+    width: 0;
+    background: #ff4757;
+    transition: var(--transition);
+  }
+  
+  .form-box.register::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .form-box.register::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+  }
+  
+  .form-box.register::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animation {
+    animation: fadeIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  @media (max-width: 1000px) {
     .wrapper {
-        width: 90%;
-        height: auto;
-        min-height: 500px;
-        margin: 80px auto 2rem;
+      width: 90%;
+      height: auto;
+      min-height: 700px;
+      margin: 90px auto 2rem;
     }
     
-    .wrapper .form-box,
-    .wrapper .info-text {
-        width: 100%;
-        padding: 30px;
+    .form-box,
+    .info-text {
+      width: 100%;
+      padding: 35px 25px;
     }
     
     .wrapper.active .form-box.login,
     .wrapper.active .info-text.login {
-        display: none;
+      display: none;
     }
     
-    nav.navbar ul {
-        gap: 10px;
+    .navbar ul {
+      gap: 15px;
     }
     
     .nav-text {
-        display: none;
+      display: none;
     }
     
-    nav.navbar ul li a i {
-        font-size: 1.2rem;
+    .input-row {
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 0;
     }
-}
-
-@media (max-width: 480px) {
-    nav.navbar {
-        padding: 10px 3%;
-    }
-    
-    nav.navbar ul li a {
-        padding: 8px;
+  }
+  
+  @media (max-width: 600px) {
+    .navbar {
+      padding: 15px 5%;
     }
     
-    .wrapper .form-box,
-    .wrapper .info-text {
-        padding: 25px 15px;
+    .form-box,
+    .info-text {
+      padding: 30px 20px;
     }
     
     .form-box h2,
     .info-text h2 {
-        font-size: 28px;
+      font-size: 1.8rem;
     }
-}
-
-/* Animaciones al cargar */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+    
+    .input-box {
+      height: 55px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    
+    .btn {
+      margin: 15px 0;
     }
-}
-
-.animation {
-    animation: fadeIn 0.5s ease forwards;
-}
+  }
