@@ -13,7 +13,7 @@ body {
 }
 
 header {
-    background-color: #99582a;
+    background-color: #2e1c15;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -55,7 +55,7 @@ header {
 }
 
 .navbar ul li a:hover {
-    color: #ce967b;
+    color: #2e1c15;
     transition: color 0.3s ease;
 }
 
@@ -82,13 +82,13 @@ header {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 5px solid #99582a;
+    border: 5px solid #2e1c15;
     margin-right: 2rem;
 }
 
 .user-info h2 {
     font-size: 2rem;
-    color: #99582a;
+    color: #2e1c15;
     margin-bottom: 0.5rem;
 }
 
@@ -111,7 +111,7 @@ header {
     color: #2c3e50;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 2px solid #99582a;
+    border-bottom: 2px solid #2e1c15;
 }
 
 .details-grid {
@@ -127,7 +127,7 @@ header {
 
 .detail-label {
     font-weight: 600;
-    color: #99582a;
+    color: #2e1c15;
     margin-bottom: 0.3rem;
 }
 
@@ -159,26 +159,26 @@ header {
 
 .stat-card i {
     font-size: 2rem;
-    color: #99582a;
+    color: #2e1c15;
     margin-bottom: 1rem;
 }
 
 .stat-card h4 {
-    color: #99582a;
+    color: #2e1c15;
     margin-bottom: 0.5rem;
 }
 
 .stat-card p {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #99582a;
+    color: #2e1c15;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: #99582a;
+    background-color: #2e1c15;
     color: white;
     margin-top: 2rem;
 }
@@ -194,7 +194,7 @@ footer {
         top: 80px;
         left: -100%;
         width: 100%;
-        background-color: #99582a;
+        background-color: #2e1c15;
         transition: left 0.3s;
     }
 

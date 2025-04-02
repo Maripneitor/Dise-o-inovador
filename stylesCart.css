@@ -36,7 +36,7 @@
 }
 
 .card-header h2 i {
-    color: #ce967b;
+    color: #2e1c15;
 }
 
 .header-accent {
@@ -45,16 +45,16 @@
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg, #ce967b 0%, #eaccb3 100%);
+    background: linear-gradient(90deg, #2e1c15 0%, #f6f6f6 100%);
 }
 
 .active-cart {
-    color: #ce967b !important;
+    color: #f9f6f5 !important;
     font-weight: 600;
 }
 
 .active-cart i {
-    color: #ce967b !important;
+    color: #ffffff !important;
 }
 
 #cartContent {

@@ -1,8 +1,8 @@
 /* Variables de color y estilos base */
 :root {
-    --primary: #99582a;
-    --secondary: #b08968;
-    --accent: #936656;
+    --primary: #2e1c15;
+    --secondary: #2e1c15;
+    --accent: #2e1c15;
     --light: #f8f9fa;
     --dark: #212529;
     --text: #495057;
@@ -33,7 +33,7 @@ nav.navbar {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(153, 88, 42, 0.95);
+    background: rgba(46,28,21,255);
     backdrop-filter: blur(10px);
     color: white;
     padding: 15px 5%;
