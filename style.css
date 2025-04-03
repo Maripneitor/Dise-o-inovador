@@ -563,7 +563,7 @@ body {
   margin-bottom: 15px;
   transition: var(--transition);
   position: relative;
-  padding-left: 15px;
+  padding-left: 25px;
 }
 
 .link a::before {
@@ -614,7 +614,7 @@ body {
   .navbar {
     position: fixed;
     top: 0;
-    left: -100%;
+    right: -100%;
     width: 80%;
     height: 100vh;
     background: var(--dark);
@@ -645,7 +645,7 @@ body {
     display: block;
 }
 #menu:checked ~ .navbar {
-    left: 0;
+    right: 0;
 }
 
 

@@ -40,7 +40,7 @@ body {
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 75px;
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
@@ -98,7 +98,7 @@ body {
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2.5rem;
 }
 
 
@@ -112,6 +112,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 50px;
     transition: var(--transition);
+    font-size: 0.9rem;
 }
 
 .main-nav a:hover {
