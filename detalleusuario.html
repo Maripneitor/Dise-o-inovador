@@ -3,93 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Usuario</title>
+    <title>Mi Perfil | B´ALAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesP.css">
     <link rel="stylesheet" href="stylesu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Logo</h1>
+    <!-- Header consistente con el diseño principal -->
+    <header class="main-header">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">B´ALAM</a>
+            
+            <input type="checkbox" id="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index2.html">Registro</a></li>
+                    <li><a href="detalleProducto.html">Productos</a></li>
+                    <li><a href="productos.html">Registrar producto</a></li>
+                    <li>
+                        <a href="carrito.html" class="active-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </li>
+                    <li><a href="detalleusuario.html" class="active"><i class="fas fa-user"></i> Mi Cuenta</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <input type="checkbox" id="menu" />
-        <label for="menu">
-            <img src="images/menu.png" alt="menu" class="menu-icono">
-        </label>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="index2.html">Registro</a></li>
-                <li><a href="detalleProducto.html">Productos</a></li>
-                <li><a href="productos.html">Registrar producto</a></li>
-                <li><a href="carrito.html" class="active-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
-                <li><a href="detalleusuario.html"><i class="fas fa-user"></i></a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main class="user-detail-container">
-        <section class="user-header">
-            <div class="user-avatar">
-                <img src="https://via.placeholder.com/150" alt="Avatar de usuario">
-            </div>
-            <div class="user-info">
-                <h2>BALAM</h2>
-                <p class="user-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-            </div>
-        </section>
-
-        <section class="user-details">
-            <h3>INFORMACIÓN</h3>
-            <div class="details-grid">
-                <div class="detail-item">
-                    <span class="detail-label">Nombre completo:</span>
-                    <span class="detail-value">Juan Pérez Balam</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Email:</span>
-                    <span class="detail-value">juan.balam@example.com</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Teléfono:</span>
-                    <span class="detail-value">+52 55 1234 5678</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Rol:</span>
-                    <span class="detail-value"></span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Fecha de registro:</span>
-                    <span class="detail-value">15/03/2023</span>
-                </div>
-                <div class="detail-item">
-                    <span class="detail-label">Último acceso:</span>
-                    <span class="detail-value">01/04/2025</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="user-stats">
-            <div class="stat-card">
-                <i class="fas fa-box-open"></i>
-                <h4>Productos</h4>
-                <p>24</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-shopping-cart"></i>
-                <h4>Pedidos</h4>
-                <p>15</p>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-star"></i>
-                <h4>Valoración</h4>
-                <p>4.8/5</p>
+    <!-- Contenido principal -->
+    <main class="content-wrapper user-profile">
+        <div class="product-card">
+            <div class="card-header">
+                <h2><i class="fas fa-user-circle"></i> Mi Perfil</h2>
+                <div class="header-accent"></div>
             </div>
             
-        </section>
+            <div class="profile-container">
+                <!-- Sección de información del usuario -->
+                <section class="profile-header">
+                    <div class="avatar-container">
+                        <img src="https://via.placeholder.com/150" alt="Avatar de usuario" class="profile-avatar">
+                        <button class="btn-edit-avatar">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-info">
+                        <h3 class="profile-name">Juan Pérez Balam</h3>
+                        <p class="profile-role">Usuario Premium</p>
+                        <div class="profile-bio">
+                            <p>Miembro desde marzo 2023 | 15 pedidos realizados</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Detalles del usuario -->
+                <section class="profile-details">
+                    <div class="detail-section">
+                        <h4><i class="fas fa-id-card"></i> Información Personal</h4>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Nombre completo:</span>
+                                <span class="detail-value">Juan Pérez Balam</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Correo electrónico:</span>
+                                <span class="detail-value">juan.balam@example.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Teléfono:</span>
+                                <span class="detail-value">+52 55 1234 5678</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Fecha de nacimiento:</span>
+                                <span class="detail-value">15/03/1990</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h4><i class="fas fa-map-marker-alt"></i> Dirección</h4>
+                        <div class="detail-grid">
+                            <div class="detail-item full-width">
+                                <span class="detail-label">Dirección principal:</span>
+                                <span class="detail-value">Calle Falsa 123, Col. Centro, CDMX, 06000</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Estadísticas -->
+                <section class="profile-stats">
+                    <h4><i class="fas fa-chart-line"></i> Mis Estadísticas</h4>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Pedidos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">4.8</span>
+                                <span class="stat-label">Valoración</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="stat-value">24</span>
+                                <span class="stat-label">Favoritos</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Acciones -->
+                <section class="profile-actions">
+                    <button class="btn-primary">
+                        <i class="fas fa-edit"></i> Editar Perfil
+                    </button>
+                    <button class="btn-secondary">
+                        <i class="fas fa-lock"></i> Cambiar Contraseña
+                    </button>
+                    <button class="btn-danger">
+                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </button>
+                </section>
+            </div>
+        </div>
     </main>
 
-   
+    <script src="cart.js"></script>
+    <script src="scriptUser.js"></script>
 </body>
 </html>

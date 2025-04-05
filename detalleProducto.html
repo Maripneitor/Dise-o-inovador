@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MarketPlus | Lista de Productos</title>
+    <title>Productos | B´ALAM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="stylesP.css">
 </head>
 <body>
-    <!-- Header consistente con el diseño anterio1r -->
+    <!-- Header consistente con el diseño principal -->
     <header class="main-header">
-        <div class="header-container">
-            <div class="logo-container">
-                
-                
-            </div>
+        <div class="navbar-container">
+            <a href="#" class="logo">B´ALAM</a>
             
             <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" class="menu-btn">
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
-                <div class="menu-line"></div>
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </label>
             
             <nav class="main-nav">
@@ -28,9 +25,9 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="index2.html">Registro</a></li>
                     <li><a href="detalleProducto.html">Productos</a></li>
-                    <li><a href="productos.html">Registrar producto</a></li>
+                    <li><a href="productos.html">Registrar Productos</a></li>
                     <li><a href="carrito.html" class="active-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
-                    <li><a href="detalleusuario.html"><i class="fas fa-user"></i></a></li>
+                    <li><a href="detalleusuario.html"><i class="fas fa-user"></i> Cuenta</a></li>
                 </ul>
             </nav>
         </div>
@@ -40,37 +37,49 @@
     <main class="content-wrapper">
         <div class="product-card">
             <div class="card-header">
-                <h2><i class="fas fa-boxes"></i> Inventario de Productos</h2>
+                <h2><i class="fas fa-boxes"></i> Catálogo de Productos</h2>
                 <div class="header-accent"></div>
             </div>
             
-            <!-- Filtros y búsqueda -->
+            <!-- Controles de búsqueda y filtrado -->
             <div class="product-controls">
                 <div class="search-container">
                     <i class="fas fa-search search-icon"></i>
                     <input type="text" id="searchInput" placeholder="Buscar productos..." class="search-input">
                 </div>
                 
-                <div class="sort-container">
-                    <label for="sortProducts"><i class="fas fa-sort"></i> Ordenar por:</label>
-                    <select id="sortProducts" class="sort-select">
-                        <option value="name">Nombre (A-Z)</option>
-                        <option value="name-desc">Nombre (Z-A)</option>
-                        <option value="price">Precio (Menor a Mayor)</option>
-                        <option value="price-desc">Precio (Mayor a Menor)</option>
-                        <option value="stock">Stock (Menor a Mayor)</option>
-                        <option value="stock-desc">Stock (Mayor a Menor)</option>
-                    </select>
+                <div class="filter-container">
+                    <div class="sort-container">
+                        <label for="sortProducts"><i class="fas fa-sort"></i> Ordenar por:</label>
+                        <select id="sortProducts" class="sort-select">
+                            <option value="name">Nombre (A-Z)</option>
+                            <option value="name-desc">Nombre (Z-A)</option>
+                            <option value="price">Precio (Menor a Mayor)</option>
+                            <option value="price-desc">Precio (Mayor a Menor)</option>
+                            <option value="stock">Stock (Menor a Mayor)</option>
+                            <option value="stock-desc">Stock (Mayor a Menor)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="category-filter">
+                        <label for="categoryFilter"><i class="fas fa-tags"></i> Categoría:</label>
+                        <select id="categoryFilter" class="category-select">
+                            <option value="all">Todas las categorías</option>
+                            <!-- Las categorías se llenarán dinámicamente -->
+                        </select>
+                    </div>
                 </div>
             </div>
             
             <!-- Lista de productos -->
-            <div id="productList" class="product-grid"></div>
+            <div id="productList" class="product-grid">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+            </div>
             
-            <!-- Mensaje cuando no hay productos -->
+            <!-- Estado vacío -->
             <div id="emptyState" class="empty-state">
                 <i class="fas fa-box-open empty-icon"></i>
-                <h3>No hay productos registrados</h3>
+                <h3>No hay productos disponibles</h3>
                 <p>Comienza agregando tu primer producto</p>
                 <a href="productos.html" class="btn-primary">
                     <i class="fas fa-plus"></i> Agregar Producto
@@ -78,9 +87,10 @@
             </div>
         </div>
         
+        <!-- Notificación flotante -->
         <div id="message" class="notification"></div>
     </main>
 
-    <script src="script2.js"></script>
+    <script src="scriptp.js"></script>
 </body>
 </html>

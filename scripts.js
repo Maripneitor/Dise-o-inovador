@@ -73,4 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     updateCartCount();
+
+
+    
 });

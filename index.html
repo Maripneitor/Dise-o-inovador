@@ -12,27 +12,33 @@
 </head>
 <body>
     <header class="header">
-        <div class="menu container">
-            <a href="#" class="logo">B´ALAM1</a>
-            
-            <input type="checkbox" id="menu-toggle" />
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="index2.html">Registro</a></li>
-                    <li><a href="detalleProducto.html">Productos</a></li>
-                    <li><a href="productos.html">Registrar Productos</a></li>
-                    <li><a href="carrito.html" class="active-cart"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
-                    <li><a href="detalleusuario.html"><i class="fas fa-user"></i> Cuenta</a></li>
-                </ul>
-            </nav>
-        </div>
+        <header class="main-header">
+            <div class="navbar-container">
+                <a href="index.html" class="logo">B´ALAM</a>
+                
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="index2.html">Registro</a></li>
+                        <li><a href="detalleProducto.html">Productos</a></li>
+                        <li><a href="productos.html">Registrar producto</a></li>
+                        <li>
+                            <a href="carrito.html" class="active-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                        <li><a href="detalleusuario.html"><i class="fas fa-user"></i> Cuenta</a></li>
+                    </ul>
+                </nav>
+            </div>
         
         <div class="header-content container">
             <h1>B´ALAM Café Artesanal</h1>
@@ -197,7 +203,9 @@
             <p>&copy; 2023 B´ALAM Café. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    
     <script src="scripts.js"></script>
+    <script src="cart.js"></script>
+    <script src="scriptp.js"></script>
 </body>
 </html>

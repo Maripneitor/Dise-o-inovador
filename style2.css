@@ -81,14 +81,13 @@ body {
   gap: 20px;
 }
 
-.navbar a {
-  color: var(--text-light);
-  text-decoration: none;
+navbar a {
+  color: var(--accent);
   font-weight: 500;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  font-size: 1.1rem;
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease; /* Asegura una transición suave */
 }
 
 .navbar a:hover, 
@@ -145,6 +144,9 @@ body {
 .navbar {
   display: flex;
   gap: 30px;
+  overflow: visible; /* Asegura que el contenido sea visible */
+  display: flex;
+  gap: 30px;
 }
 
 .navbar ul {
@@ -158,29 +160,18 @@ body {
   font-weight: 500;
   font-size: 1.1rem;
   position: relative;
-  padding: 5px 0;
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.3s ease, transform 0.3s ease; /* Asegura una transición suave */
 }
-
-.navbar a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--gold);
-  transition: var(--transition);
-}
-
 .navbar a:hover {
-  color: var(--gold);
+  color: var(--gold); /* Cambia el color del texto */
+  transform: translateY(-3px); /* Eleva ligeramente el texto */
 }
 
-.navbar a:hover::after {
-  width: 100%;
-}
+
+
+
+
 
 .active-cart {
   display: flex;
@@ -598,6 +589,9 @@ body {
   }
 
   .navbar {
+    display: flex;
+    gap: 30px;
+    overflow: visible; /* Asegura que el contenido sea visible */
     position: fixed;
     top: 0;
     right: -100%; /* Oculta el menú fuera de la pantalla hacia la derecha */
