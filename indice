@@ -3,13 +3,13 @@
     index.html = Página principal con menú de navegación, banners y secciones de contenido. Contiene enlaces a todas las demás páginas.
     style.css = Estilos principales para la página de inicio (header, botones, responsive).
     images = Carpeta que contiene imágenes utilizadas en la página principal.
-    //script.js = Script para manejar el menú de navegación y la funcionalidad de los banners.
+    script.js = Script para manejar el menú de navegación y la funcionalidad de los banners.
 
 
 2. Login/Registro
     index2.html = Página de inicio de sesión y registro. Contiene formularios para iniciar sesión y registrarse.
     style2.css = Estilos para la página de inicio de sesión y registro (formulario, botones, responsive).
-    script.js = Script para manejar el inicio de sesión y el registro (validación de formularios, mensajes de error).
+    scriptR.js = Script para manejar el inicio de sesión y el registro (validación de formularios, mensajes de error).
 
 3. Productos
     detalleProducto.html = Página que muestra la lista de productos. Contiene un botón para agregar nuevos productos.
@@ -17,7 +17,13 @@
     stylesP.css = Estilos para la página de productos (formulario, botones, responsive).
     script2.js = Script para manejar el CRUD de productos (agregar, editar, eliminar productos).
 
-4. archivos
+4. Usuario
+    detalleusuario.html = Página que muestra la información del usuario. Contiene un botón para editar la información del usuario.
+    stylesu.css = Estilos para la página de usuario (formulario, botones, responsive).
+
+
+
+5. archivos
 detalleProducto.html
 index.html
 index2.html
@@ -27,15 +33,18 @@ script2.js
 style.css
 style2.css
 stylesP.css
-
+detalleusuario.html
+stylesu.css
 
 proyecto/
 ├── index.html
 ├── index2.html          # Login/Registro (usa script.js)
 ├── productos.html       # Formulario de productos
 ├── detalleProducto.html # Lista de productos
+├── detalleusuario.html  # Información del usuario
 ├── script.js            # Este archivo (toggle formularios)
 ├── script2.js           # CRUD de productos
 ├── style.css            # Estilos página principal
 ├── style2.css           # Estilos login/registro
 └── stylesP.css          # Estilos productos
+└── stylesu.css          # Estilos usuario
