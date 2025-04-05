@@ -35,7 +35,7 @@ body {
   padding: 0 20px;
 }
 
-/* Header Moderno con Efecto Parallax */
+/* Header Moderno con Efecto Parallax12 */
 .header {
   background: linear-gradient(135deg, rgba(61, 35, 25, 0.85) 0%, rgba(33, 19, 13, 0.95) 100%), 
               url('images/bg.jpg') center/cover fixed no-repeat;
