@@ -430,7 +430,7 @@ body {
 .btn-refresh:hover {
     background-color: var(--secondary);
 }
-/* Responsive */
+/* Responsive222222222 */
 @media (max-width: 992px) {
     .product-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
