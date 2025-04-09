@@ -11,6 +11,10 @@
   --text: #212121;
   --text-light: #FAFAFA;
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --logo-height: 100px; /* Ajusta la altura del logo aquí */
+  --logo-width: 200px; /* Ajusta el ancho del logo aquí o usa 'auto' para mantener la proporción */
+ 
+  
 }
 
 * {
@@ -28,7 +32,12 @@
   flex-direction: column;
   position: relative;
 }
-
+.logo-img {
+  max-height: 100px;; /* Usa la variable para la altura */
+  width: auto; /* Mantén la proporción */ /* Usa la variable para el ancho */
+  display: block;
+  margin: 0 auto; /* Centra la imagen si es necesario */
+}
 .navbar-container {
   max-width: 3400px;
   margin: 0 auto;
