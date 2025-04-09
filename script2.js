@@ -96,7 +96,20 @@ function updateCartCount() {
         element.textContent = count;
     });
 }
+document.addEventListener('DOMContentLoaded', function () {
+    // Recuperar el carrito desde localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCountElement = document.getElementById('cart-count');
 
+    // Función para actualizar el contador del carrito
+    function updateCartCount() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0); // Sumar las cantidades de los productos
+        cartCountElement.textContent = totalItems; // Actualizar el contenido del contador
+    }
+
+    // Llamar a la función para actualizar el contador al cargar la página
+    updateCartCount();
+});
 // Funciones globales
 window.addToCart = function(index) {
     const products = getProductsFromStorage();
@@ -241,4 +254,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Actualizar contador del carrito al cargar la página
     updateCartCount();
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const refreshButton = document.getElementById('refreshProducts');
+        const productList = document.getElementById('productList');
+        const emptyState = document.getElementById('emptyState');
+    
+        // Función para actualizar los productos
+        function refreshProducts() {
+            // Simula la recarga de productos (puedes reemplazar esto con una llamada a una API o lógica personalizada)
+            const products = JSON.parse(localStorage.getItem('products')) || [];
+            
+            if (products.length === 0) {
+                productList.innerHTML = '';
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+                productList.innerHTML = products.map(product => `
+                    <div class="product-item">
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        <div class="product-info">
+                            <h3>${product.name}</h3>
+                            <p><strong>Precio:</strong> $${product.price.toFixed(2)}</p>
+                            <p><strong>Stock:</strong> ${product.stock}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+    
+        // Evento para el botón de actualizar
+        refreshButton.addEventListener('click', refreshProducts);
+    });
 });

@@ -296,6 +296,7 @@ body {
   }
   
   .navbar {
+    padding-top: 900px; 
       position: fixed;
       top: 0;
       right: -100%;
@@ -625,7 +626,7 @@ body {
 }
 
 .general-2 {
-  background: url('images/coffee-1.jpg') center/cover no-repeat;
+  background: url('images/coffe-1.jpg') center/cover no-repeat;
   background-attachment: fixed;
   position: relative;
 }
@@ -923,6 +924,7 @@ body {
   }
   
   .main-nav {
+    padding-top: 120px;
       position: fixed;
       top: 0;
       right: -100%;

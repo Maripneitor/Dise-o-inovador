@@ -413,7 +413,23 @@ body {
     transform: translateY(0);
     opacity: 1;
 }
+.btn-refresh {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
 
+.btn-refresh:hover {
+    background-color: var(--secondary);
+}
 /* Responsive */
 @media (max-width: 992px) {
     .product-grid {
@@ -425,6 +441,7 @@ body {
     }
     
     .main-nav {
+        padding-top: 120px;
         position: fixed;
         top: 0;
         right: -100%;
