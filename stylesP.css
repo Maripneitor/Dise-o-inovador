@@ -54,7 +54,9 @@ body {
     background: rgba(61, 35, 25, 0.9);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-
+  .spacer {
+    height: 50px; /* Ajusta la altura según la separación deseada */
+  }
 .logo {
     color: var(--gold);
     font-size: 1.8rem;
@@ -62,7 +64,12 @@ body {
     text-decoration: none;
     font-family: 'Playfair Display', serif;
 }
-
+.logo-img {
+    max-height: 100px;; /* Usa la variable para la altura */
+    width: auto; /* Mantén la proporción */ /* Usa la variable para el ancho */
+    display: block;
+    margin: 0 auto; /* Centra la imagen si es necesario */
+  }
 /* Menú hamburguesa */
 #menu-toggle {
     display: none;

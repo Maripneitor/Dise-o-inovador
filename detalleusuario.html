@@ -13,7 +13,9 @@
     <!-- Header consistente con el diseño principal -->
     <header class="main-header">
         <div class="navbar-container">
-            <a href="index.html" class="logo">B´ALAM</a>
+            <a href="index.html" class="logo">
+                <img src="images/sale (3).png" alt="B´ALAM Logo" class="logo-img" loading="lazy">
+            </a>
             
             <input type="checkbox" id="menu-toggle" />
             <label for="menu-toggle" class="hamburger">
@@ -35,7 +37,7 @@
             </nav>
         </div>
     </header>
-
+    <div class="spacer"></div>
     <!-- Contenido principal -->
     <main class="content-wrapper user-profile">
         <div class="product-card">
@@ -44,20 +46,21 @@
                 <div class="header-accent"></div>
             </div>
             
-            <div class="profile-container">
+            <div class="profile-container" id="profile-container">
                 <!-- Sección de información del usuario -->
                 <section class="profile-header">
                     <div class="avatar-container">
-                        <img src="https://via.placeholder.com/150" alt="Avatar de usuario" class="profile-avatar">
-                        <button class="btn-edit-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Avatar de usuario" class="profile-avatar" id="profile-avatar">
+                        <button class="btn-edit-avatar" id="btn-edit-avatar">
                             <i class="fas fa-camera"></i>
                         </button>
                     </div>
                     <div class="profile-info">
-                        <h3 class="profile-name">Juan Pérez Balam</h3>
+                        <h3 class="profile-name" id="profile-name">Juan Pérez Balam</h3>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
                         <p class="profile-role">Usuario Premium</p>
                         <div class="profile-bio">
-                            <p>Miembro desde marzo 2023 | 15 pedidos realizados</p>
+                            <p>Miembro desde marzo 2023 | <span id="orders-count">15</span> pedidos realizados</p>
                         </div>
                     </div>
                 </section>
@@ -69,19 +72,23 @@
                         <div class="detail-grid">
                             <div class="detail-item">
                                 <span class="detail-label">Nombre completo:</span>
-                                <span class="detail-value">Juan Pérez Balam</span>
+                                <span class="detail-value" id="fullname-value">Juan Pérez Balam</span>
+                                <input type="text" class="detail-input" id="fullname-input" value="Juan Pérez Balam">
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Correo electrónico:</span>
-                                <span class="detail-value">juan.balam@example.com</span>
+                                <span class="detail-value" id="email-value">juan.balam@example.com</span>
+                                <input type="email" class="detail-input" id="email-input" value="juan.balam@example.com">
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Teléfono:</span>
-                                <span class="detail-value">+52 55 1234 5678</span>
+                                <span class="detail-value" id="phone-value">+52 55 1234 5678</span>
+                                <input type="tel" class="detail-input" id="phone-input" value="+52 55 1234 5678">
                             </div>
                             <div class="detail-item">
                                 <span class="detail-label">Fecha de nacimiento:</span>
-                                <span class="detail-value">15/03/1990</span>
+                                <span class="detail-value" id="birthdate-value">15/03/1990</span>
+                                <input type="date" class="detail-input" id="birthdate-input" value="1990-03-15">
                             </div>
                         </div>
                     </div>
@@ -91,7 +98,8 @@
                         <div class="detail-grid">
                             <div class="detail-item full-width">
                                 <span class="detail-label">Dirección principal:</span>
-                                <span class="detail-value">Calle Falsa 123, Col. Centro, CDMX, 06000</span>
+                                <span class="detail-value" id="address-value">Calle Falsa 123, Col. Centro, CDMX, 06000</span>
+                                <input type="text" class="detail-input" id="address-input" value="Calle Falsa 123, Col. Centro, CDMX, 06000">
                             </div>
                         </div>
                     </div>
@@ -106,7 +114,7 @@
                                 <i class="fas fa-shopping-bag"></i>
                             </div>
                             <div class="stat-info">
-                                <span class="stat-value">15</span>
+                                <span class="stat-value" id="orders-value">15</span>
                                 <span class="stat-label">Pedidos</span>
                             </div>
                         </div>
@@ -115,7 +123,7 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <div class="stat-info">
-                                <span class="stat-value">4.8</span>
+                                <span class="stat-value" id="rating-value">4.8</span>
                                 <span class="stat-label">Valoración</span>
                             </div>
                         </div>
@@ -124,23 +132,33 @@
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div class="stat-info">
-                                <span class="stat-value">24</span>
+                                <span class="stat-value" id="favorites-value">24</span>
                                 <span class="stat-label">Favoritos</span>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Acciones -->
+                <!-- Acciones normales -->
                 <section class="profile-actions">
-                    <button class="btn-primary">
+                    <button class="btn-primary" id="btn-edit-profile">
                         <i class="fas fa-edit"></i> Editar Perfil
                     </button>
-                    <button class="btn-secondary">
+                    <button class="btn-secondary" id="btn-change-password">
                         <i class="fas fa-lock"></i> Cambiar Contraseña
                     </button>
-                    <button class="btn-danger">
+                    <button class="btn-danger" id="btn-logout">
                         <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                    </button>
+                </section>
+
+                <!-- Acciones durante edición -->
+                <section class="edit-actions">
+                    <button class="btn-save" id="btn-save">
+                        <i class="fas fa-save"></i> Guardar Cambios
+                    </button>
+                    <button class="btn-cancel" id="btn-cancel">
+                        <i class="fas fa-times"></i> Cancelar
                     </button>
                 </section>
             </div>

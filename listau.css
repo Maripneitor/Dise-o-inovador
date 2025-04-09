@@ -63,7 +63,12 @@
     font-family: 'Playfair Display', serif;
     transition: var(--transition);
   }
-  
+  .logo-img {
+    max-height: 100px;; /* Usa la variable para la altura */
+    width: auto; /* Mantén la proporción */ /* Usa la variable para el ancho */
+    display: block;
+    margin: 0 auto; /* Centra la imagen si es necesario */
+  }
   .logo:hover {
     transform: scale(1.03);
   }
@@ -604,3 +609,7 @@
     padding: 70px 20px 20px;
   }
 }
+
+
+
+

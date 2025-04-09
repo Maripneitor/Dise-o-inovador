@@ -85,7 +85,9 @@ body {
   list-style: none;
   gap: 20px;
 }
-
+.spacer {
+  height: 50px; /* Ajusta la altura según la separación deseada */
+}
 navbar a {
   color: var(--accent);
   font-weight: 500;
