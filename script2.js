@@ -54,9 +54,14 @@ function renderProducts(products) {
                 <p><strong>Stock:</strong> ${product.stock}</p>
                 <p class="description">${product.description}</p>
                 <div class="product-actions">
+                  <!-- Botón para editar información -->
+                <button onclick="editProduct(${index})" class="btn-edit">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
                     <button onclick="addToCart(${index})" class="btn-cart">
                         <i class="fas fa-cart-plus"></i> Añadir al carrito
                     </button>
+                    
                     <button onclick="deleteProduct(${index})" class="btn-delete">
                         <i class="fas fa-trash"></i> Eliminar
                     </button>
@@ -289,3 +294,29 @@ document.addEventListener('DOMContentLoaded', function() {
         refreshButton.addEventListener('click', refreshProducts);
     });
 });
+
+
+
+window.editProduct = function(index) {
+    const products = getProductsFromStorage();
+    const product = products[index];
+
+    // Mostrar un formulario para editar el producto
+    const newName = prompt("Editar nombre del producto:", product.name);
+    const newPrice = prompt("Editar precio del producto:", product.price);
+    const newStock = prompt("Editar stock del producto:", product.stock);
+    const newDescription = prompt("Editar descripción del producto:", product.description);
+
+    if (newName !== null) product.name = newName;
+    if (newPrice !== null) product.price = parseFloat(newPrice);
+    if (newStock !== null) product.stock = parseInt(newStock, 10);
+    if (newDescription !== null) product.description = newDescription;
+
+    // Guardar los cambios en localStorage
+    localStorage.setItem('products', JSON.stringify(products));
+
+    // Volver a renderizar los productos
+    renderProducts(products);
+
+    showMessage("Producto actualizado correctamente");
+};

@@ -33,17 +33,17 @@ function loadUserData() {
 function setupEventListeners() {
     // Botón de editar avatar
     document.querySelector('.btn-edit-avatar').addEventListener('click', function() {
-        alert('Funcionalidad de editar avatar en desarrollo');
+        
     });
     
     // Botón de editar perfil
     document.querySelector('.btn-primary').addEventListener('click', function() {
-        alert('Funcionalidad de editar perfil en desarrollo');
+        
     });
     
     // Botón de cambiar contraseña
     document.querySelector('.btn-secondary').addEventListener('click', function() {
-        alert('Funcionalidad de cambiar contraseña en desarrollo');
+        
     });
     
     // Botón de cerrar sesión
@@ -183,4 +183,32 @@ document.getElementById('avatar-upload').addEventListener('change', function(e) 
         };
         reader.readAsDataURL(file);
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const editButton = document.getElementById('btn-edit-profile');
+    const saveButton = document.getElementById('btn-save');
+    const cancelButton = document.getElementById('btn-cancel');
+    const passwordValue = document.getElementById('password-value');
+    const passwordInput = document.getElementById('password-input');
+
+    // Habilitar edición
+    editButton.addEventListener('click', () => {
+        passwordValue.style.display = 'none';
+        passwordInput.style.display = 'block';
+    });
+
+    // Guardar cambios
+    saveButton.addEventListener('click', () => {
+        passwordValue.textContent = '********'; // Opcional: puedes actualizar con lógica adicional
+        passwordValue.style.display = 'block';
+        passwordInput.style.display = 'none';
+    });
+
+    // Cancelar edición
+    cancelButton.addEventListener('click', () => {
+        passwordInput.style.display = 'none';
+        passwordValue.style.display = 'block';
+    });
 });
